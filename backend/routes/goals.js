@@ -28,7 +28,9 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const goal = new Goal({
     title: req.body.title,
-    level: req.body.level,
+    description: req.body.description,
+    tag: req.body.tag,
+    // level: req.body.level,
   });
 
   try {
@@ -47,8 +49,10 @@ router.put("/:id", async (req, res) => {
       req.params.id,
       {
         $set: {
-          title: req.body.text,
-          level: req.body.tag,
+          title: req.body.title,
+          description: req.body.description,
+          tag: req.body.tag,
+          // level: req.body.level,
         },
       },
       { new: true }

@@ -155,6 +155,7 @@ p {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
     animation-name: modalopen;
+    animation-duration: var(--modal-duration);
 }
 
 .modal-btn {
@@ -176,6 +177,35 @@ p {
     background-color: #153544;
     border: 3px solid #153544;
     transform: rotate(90deg)
+}
+
+@keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+form input,
+form textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
 }
 
 
@@ -227,44 +257,51 @@ p {
 
 /* ====== BODY MAIN ====== */
 
+.quotas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+.quotas .card {
+    position: relative;
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-.tiles .container {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-/* WENDY CHANGED STUFF */
-.tile {
-    flex: 1;
-    background-color: #fff;
-    margin: 20px 10px;
+.tag {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
     border-radius: 5px;
-    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.20);
-    padding: 15px 20px;
-    gap: 1.25rem;
-}
-
-/* WENDY CHANGED STUFF */
-.tileText {
-    font-size: 1rem;
-    line-height: 1.4rem;
-}
-
-.tileTotal {
-    display: inline;
-}
-
-/* WENDY ADDED TO ALIGN BUTTON W/ TOTAL */
-.tileActionAlign {
-    display: flex;
-    align-items: center;
-}
+    margin: 5px;
+    font-size: 14px;
+  }
+  
+  .tag-home {
+    background: steelblue;
+  }
+  
+  .tag-school {
+    background: coral;
+  }
+  
+  .tag-fitness {
+    background: green;
+  }
+  
+  .tag-fun {
+    background: purple;
+  }
 
 
 /* ====== FOOTER CSS ====== */

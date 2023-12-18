@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily goals - QuotaQuest</title>
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <script type="module" defer src="./script.js"></script>
   </head>
 
   <body>
@@ -40,11 +40,13 @@
       </div>
     </header>
 
-    <main>
-      <div id="modal" class="modal">
-        <div id="form-modal" class="modal-box"></div>
-      </div>
-    </main>
+    <div class="container">
+      <div id="quota-list" class="quotas"></div>
+    </div>
+
+    <div id="modal" class="modal">
+      <div id="form-modal" class="modal-box"></div>
+    </div>
 
     <footer id="footer">
       <div class="footerContainer">
