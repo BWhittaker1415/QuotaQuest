@@ -1,0 +1,298 @@
+/* ====== GLOBAL CSS ====== */
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #EEEEEE;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.shadow-main {
+    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.20);
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+p {
+    color: #333;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* NAVIGATION HEADER STYLING */
+.top {
+    display: flex;
+    padding: 1.56rem;
+    align-items: center;
+    background-color: #285867;
+    color: #eee;
+}
+
+.logo-main {
+    gap: 0.625rem;
+    font-size: 1.75rem;
+    align-items: center;
+    font-style: normal;
+    font-weight: 800;
+    display: flex;
+    width: 100%;
+
+}
+
+.title {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 800;
+    width: 100%;
+    line-height: 1rem;
+ }
+ 
+ .title a {
+    text-decoration: none;
+ }
+ 
+ .logout a{
+    padding-right: 20px;
+    font-size: 1.2em;
+ }
+ 
+
+.main-action {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+/* NAVBAR */
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    background-color: #153544;
+}
+
+.navbar a {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #eeeeee;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 49px;
+}
+
+
+/* PRIMARY BUTTON STYLES */
+.primary-button {
+    border-radius: 0.625rem;
+    border: 3px solid #153544;
+    background: #285867;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    color: #eee;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.primary-button:hover {
+    background-color: #153544;
+    border: 3px solid #09202B;
+}
+
+.primary-button:active {
+    background-color: #09202B;
+    border: 3px solid #09202B;
+}
+
+
+.primary-button:focus {
+    outline-color: #000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-box {
+    margin: 10% auto;
+    width: 600px;
+    background-color: #285867;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
+    animation-name: modalopen;
+}
+
+.modal-btn {
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .4s;
+    border: 3px solid #153544;
+    background: #285867;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+}
+
+.modal-btn:hover {
+    background-color: #153544;
+    border: 3px solid #153544;
+    transform: rotate(90deg)
+}
+
+
+/* SECONDARY BUTTON STYLES */
+
+.secondary-button {
+    border-radius: 0.625rem;
+    border: 3px solid #E39774;
+    background: #FAE0D6;
+    padding: 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    color: #E39774;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.secondary-button:hover {
+    background-color: #E38A6C;
+    border: 3px solid #7B2A10;
+    color: #7B2A10;
+
+}
+
+.secondary-button:active {
+    background-color: #3D1103;
+    border: 3px solid #3D1103;
+    color: #eee;
+}
+
+
+.secondary-button:focus {
+    outline-color: #000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+
+
+
+
+/* ====== BODY MAIN ====== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.tiles .container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* WENDY CHANGED STUFF */
+.tile {
+    flex: 1;
+    background-color: #fff;
+    margin: 20px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.20);
+    padding: 15px 20px;
+    gap: 1.25rem;
+}
+
+/* WENDY CHANGED STUFF */
+.tileText {
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+.tileTotal {
+    display: inline;
+}
+
+/* WENDY ADDED TO ALIGN BUTTON W/ TOTAL */
+.tileActionAlign {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ====== FOOTER CSS ====== */
+
+#footer {
+    position: relative;
+    margin: auto 0;
+    width: 100%;
+}
+
+.footerContainer {
+    color: #333333;
+    display: flex;
+    padding: 1.1rem;
+    align-items: center;
+    background-color: #DEDEDE;
+    border-top: 1px solid #CCCCCC;
+}
+
+.logoFooter {
+    color: #333333;
+    padding-right: 15px;
+}
+
+.footerText {
+    font-size: .75rem;
+    color: #333;
+    text-align: right;
+    white-space: nowrap;
+
+}
