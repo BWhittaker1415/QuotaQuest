@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 const connectDB = require("./config/db");
@@ -15,12 +16,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(cors());
+
 app.get("/", (req, res) => {
   res.send({ msg: "This is Root!" });
 });
 
-const goalsRouter = require("./routes/goals");
-app.use("/api/goals", goalsRouter);
+const quotasRouter = require("./routes/quotas");
+app.use("/api/quotas", quotasRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);

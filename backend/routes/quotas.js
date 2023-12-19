@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const Goal = require("../models/Goal");
+const Quota = require("../models/Quota");
 
 // GET ALL
 router.get("/", async (req, res) => {
   try {
-    const goals = await Goal.find();
-    res.json({ success: true, data: goals });
+    const quotas = await Quota.find();
+    res.json({ success: true, data: quotas });
   } catch (error) {
     console.log(error);
     res.sendStatus(500).json({ success: false, error: "Something went wrong" });
@@ -16,8 +16,8 @@ router.get("/", async (req, res) => {
 // GET ONE
 router.get("/:id", async (req, res) => {
   try {
-    const goal = await Goal.findById(req.params.id);
-    res.json({ success: true, data: goal });
+    const quota = await Quota.findById(req.params.id);
+    res.json({ success: true, data: quota });
   } catch (error) {
     console.log(error);
     res.sendStatus(500).json({ success: false, error: "Something went wrong" });
@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
 
 // CREATE ONE
 router.post("/", async (req, res) => {
-  const goal = new Goal({
+  const quota = new Quota({
     title: req.body.title,
     description: req.body.description,
     tag: req.body.tag,
@@ -34,8 +34,8 @@ router.post("/", async (req, res) => {
   });
 
   try {
-    const savedGoal = await goal.save();
-    res.json({ success: true, data: savedGoal });
+    const savedQuota = await quota.save();
+    res.json({ success: true, data: savedQuota });
   } catch (error) {
     console.log(error);
     res.sendStatus(500).json({ success: false, error: "Something went wrong" });
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 // UPDATE ONE
 router.put("/:id", async (req, res) => {
   try {
-    const updatedGoal = await Goal.findByIdAndUpdate(
+    const updatedQuota = await Quota.findByIdAndUpdate(
       req.params.id,
       {
         $set: {
@@ -57,7 +57,7 @@ router.put("/:id", async (req, res) => {
       },
       { new: true }
     );
-    res.json({ success: true, data: updatedGoal });
+    res.json({ success: true, data: updatedQuota });
   } catch (error) {
     console.log(error);
     res.sendStatus(500).json({ success: false, error: "Something went wrong" });
@@ -67,7 +67,7 @@ router.put("/:id", async (req, res) => {
 // DELETE ONE
 router.delete("/:id", async (req, res) => {
   try {
-    await Goal.findByIdAndDelete(req.params.id);
+    await Quota.findByIdAndDelete(req.params.id);
     res.json({ success: true, data: {} });
   } catch (error) {
     console.log(error);

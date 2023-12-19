@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const GoalSchema = new mongoose.Schema({
+const QuotaSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please add some text"],
@@ -23,4 +23,4 @@ const GoalSchema = new mongoose.Schema({
   // },
 });
 
-module.exports = mongoose.model("Goal", GoalSchema);
+module.exports = mongoose.model("Quota", QuotaSchema);

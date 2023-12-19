@@ -90,27 +90,24 @@ quotaForm.render();
 class QuotaList {
   constructor() {
     this.quotaListEl = document.querySelector("#quota-list");
-    this.quotas = [
-      {
-        id: 1,
-        title: "Make the bed",
-        description: "this is a description.",
-        tag: "Home",
-        date: "12/17/2023",
-      },
-      {
-        id: 2,
-        title: "Got to bed early",
-        description: "this is a description.",
-        tag: "Fun",
-        date: "12/17/2023",
-      },
-    ];
+    this.quotas = [];
+    this.getQuotas();
+
     this.validTags = new Set();
     this.validTags.add("home");
     this.validTags.add("school");
     this.validTags.add("fitness");
     this.validTags.add("fun");
+  }
+
+  async getQuotas() {
+    try {
+      const res = await QuotaApi.getQuotas();
+      this.quotas = res.data.data;
+      console.log(this.quotas);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   getTagClass(tag) {
@@ -149,3 +146,18 @@ class QuotaList {
 
 const quotaList = new QuotaList();
 quotaList.render();
+
+// ===== QUOTA API ===== //
+import axios from "axios";
+
+class QuotaApi {
+  constructor() {
+    this.apiUrl = "http://localhost:4000/api/quotas";
+  }
+
+  getQuotas() {
+    return axios.get(this.apiUrl);
+  }
+}
+
+export default new QuotaApi();
