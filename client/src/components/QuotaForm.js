@@ -1,13 +1,17 @@
+import QuotasApi from "../services/quotasApi";
+import QuotaList from "./QuotaList";
+
 class QuotaForm {
   constructor() {
     this.formModal = document.querySelector("#form-modal");
+    this.quotaList = new QuotaList();
   }
 
   addEventListeners() {
     this.form.addEventListener("submit", this.handleSubmit.bind(this));
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
     const quota = {
@@ -16,7 +20,11 @@ class QuotaForm {
       tag: this.form.elements.tag.value,
     };
 
-    console.log(quota);
+    // Adds quota to server
+    const newQuota = await QuotasApi.createQuota(quota);
+
+    // Adds quota to the DOM
+    this.quotaList.addQuotaToList(newQuota.data.data);
 
     // Clear fields
     this.form.elements.title.value = "";

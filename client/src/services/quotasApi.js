@@ -8,6 +8,10 @@ class QuotaApi {
   getQuotas() {
     return axios.get(this.apiUrl);
   }
+
+  createQuota(data) {
+    return axios.post(this.apiUrl, data);
+  }
 }
 
 export default new QuotaApi();

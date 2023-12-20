@@ -23,6 +23,11 @@ class QuotaList {
     }
   }
 
+  addQuotaToList(quota) {
+    this.quotas.push(quota);
+    this.render();
+  }
+
   getTagClass(tag) {
     tag = tag.toLowerCase();
     let tagClass = "";
