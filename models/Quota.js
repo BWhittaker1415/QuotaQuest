@@ -7,7 +7,7 @@ const QuotaSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: false,
+    required: true,
   },
   tag: {
     type: String,
@@ -23,4 +23,6 @@ const QuotaSchema = new mongoose.Schema({
   // },
 });
 
-module.exports = mongoose.model("Quota", QuotaSchema);
+const Quota = mongoose.model("Quota", QuotaSchema);
+
+module.exports = Quota;

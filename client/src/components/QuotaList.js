@@ -1,3 +1,5 @@
+import QuotaApi from "../services/quotasApi";
+
 class QuotaList {
   constructor() {
     this.quotaListEl = document.querySelector("#quota-list");
@@ -15,7 +17,7 @@ class QuotaList {
     try {
       const res = await QuotaApi.getQuotas();
       this.quotas = res.data.data;
-      console.log(this.quotas);
+      this.render();
     } catch (error) {
       console.log(error);
     }

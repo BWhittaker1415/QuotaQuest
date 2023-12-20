@@ -8,4 +8,3 @@ const modal = new Modal();
 const quotaForm = new QuotaForm();
 quotaForm.render();
 const quotaList = new QuotaList();
-quotaList.render();
