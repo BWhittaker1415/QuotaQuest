@@ -2,7 +2,7 @@ import axios from "axios";
 
 class QuotaApi {
   constructor() {
-    this.apiUrl = "http://localhost:4000/api/quotas";
+    this.apiUrl = "/api/quotas";
   }
 
   getQuotas() {

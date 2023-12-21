@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)file:///Users/ben/Desktop/Daily%20goals%20-%20QuotaQuest.html -->
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -13,9 +11,10 @@
       referrerpolicy="no-referrer"
     />
     <title>Daily goals - QuotaQuest</title>
-    <script type="module" defer src="./index.js"></script>
+    <script type="module" defer="defer" src="./index.js"></script>
+    <script defer="defer" src="bundle.js"></script>
+    <link href="main.css" rel="stylesheet" />
   </head>
-
   <body>
     <div class="top">
       <div class="logo-main title">
@@ -25,35 +24,22 @@
     </div>
     <nav class="navbar">
       <div class="container">
-        <div class="navLeft">
-          <a href="#">Manage Goals</a>
-        </div>
-
+        <div class="navLeft"><a href="#">Manage Goals</a></div>
         <button type="button" id="modal-btn" class="modal-btn">
           <img src="${plusSvg}" alt="Plus Image" />
         </button>
-
-        <div class="navRight">
-          <a href="#">Streaks</a>
-        </div>
+        <div class="navRight"><a href="#">Streaks</a></div>
       </div>
     </nav>
     <header class="header">
       <div class="container">
-        <div>
-          <h1>Daily Quotas</h1>
-        </div>
+        <div><h1>Daily Quotas</h1></div>
       </div>
     </header>
-
-    <div class="container">
-      <div id="quota-list" class="quotas"></div>
-    </div>
-
+    <div class="container"><div id="quota-list" class="quotas"></div></div>
     <div id="modal" class="modal">
       <div id="form-modal" class="modal-box"></div>
     </div>
-
     <footer id="footer">
       <div class="footerContainer">
         <img
@@ -61,15 +47,12 @@
           src="../images/books.vertical.circle.fill_dark.svg"
           alt=""
         />
-        <div class="title">
-          <p class="title">QuotaQuest</p>
-        </div>
-
+        <div class="title"><p class="title">QuotaQuest</p></div>
         <div>
           <p class="footerText">
             <span
               >©
-              <script type="text/javascript">
+              <script>
                 document.write(new Date().getFullYear());
               </script>
               QuotaQuest.</span

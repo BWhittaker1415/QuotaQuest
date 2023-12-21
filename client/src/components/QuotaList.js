@@ -15,6 +15,7 @@ class QuotaList {
 
   addEventListeners() {
     this.quotaListEl.addEventListener("click", (e) => {
+      e.preventDefault();
       if (e.target.classList.contains("fa-times")) {
         e.stopImmediatePropagation();
         const quotaId = e.target.parentElement.parentElement.dataset.id;
