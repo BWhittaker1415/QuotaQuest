@@ -12,6 +12,14 @@ class QuotaApi {
   createQuota(data) {
     return axios.post(this.apiUrl, data);
   }
+
+  updateQuota(id, data) {
+    return axios.put(`${this.apiUrl}/${id}`, data);
+  }
+
+  deleteQuota(id) {
+    return axios.delete(`${this.apiUrl}/${id}`);
+  }
 }
 
 export default new QuotaApi();
