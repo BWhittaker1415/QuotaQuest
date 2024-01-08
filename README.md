@@ -1,6 +1,8 @@
 ## Desription
 This is a habit tracker designed to encourage your better and healthier habits. The goal of QuotaQuest is to bring a level of fun to daily habits that may seem monotonous and turn them more interesting by giving them a point value. Using QuotaQuest will help give you a sense of real-time progress by tracking everything that you choose to have as a daily goal.
 
+<a href="https://quotaquest.onrender.com/">View the app here,</a> and continue on for more info on the project.
+
 ## Technologies
 <ul>
    <li>Frontend: HTML | CSS | JavaScript</li>
