@@ -11,6 +11,8 @@ class QuotaList {
     this.validTags.add("school");
     this.validTags.add("fitness");
     this.validTags.add("fun");
+
+    this.progressTextEl = document.querySelector("#progress-text");
   }
 
   addEventListeners() {
@@ -22,6 +24,16 @@ class QuotaList {
         this.deleteQuota(quotaId);
       }
     });
+
+    this.quotaListEl.addEventListener("click", (e) => {
+      if (e.target.classList.contains("complete")) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const quotaId = e.target.parentElement.dataset.id;
+        this.updateQuota(quotaId);
+      }
+    });
   }
 
   async getQuotas() {
@@ -31,6 +43,23 @@ class QuotaList {
       this.render();
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async updateQuota(quotaId) {
+    try {
+      // Update the task as completed on the server (you'll need an API endpoint for this)
+      const res = await QuotaApi.updateQuota(quotaId);
+
+      if (res.success) {
+        // Update the progress bar here (calculate progress and update UI)
+        this.updateProgressBar();
+      } else {
+        alert(`Error: ${res.error}`);
+      }
+    } catch (error) {
+      console.error("Error completing quota:", error);
+      alert("Error completing quota. Please try again.");
     }
   }
 
@@ -74,6 +103,7 @@ class QuotaList {
         return `
          <div class="card" data-id="${quota._id}">
          <button class="delete"><i class="fas fa-times"></i></button>
+         <button class="complete">Done!</button>
          <h3>
            ${quota.title}
          </h3>
@@ -84,11 +114,23 @@ class QuotaList {
          <p>
            Posted on <span class="date">${quota.date}</span>
          </p>
+         <p id="progress-text">Progress: 0%</p>
        </div>
        `;
       })
       .join("");
     this.addEventListeners();
+  }
+  updateProgressText() {
+    // Calculate the progress (e.g., completed tasks / total tasks)
+    const totalTasks = this.quotas.length;
+    const completedTasks = this.quotas.filter(
+      (quota) => quota.completed
+    ).length;
+    const progress = (completedTasks / totalTasks) * 100;
+
+    // Update the progress text (placeholder for progress bar)
+    this.progressTextEl.textContent = `Progress: ${progress.toFixed(0)}%`;
   }
 }
 

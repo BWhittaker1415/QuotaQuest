@@ -1,202 +1,247 @@
 /* ====== GLOBAL CSS ====== */
 
+/* Reset and global styles */
 body {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #EEEEEE;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #EEEEEE;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Shadows */
 .shadow-main {
-    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.20);
 }
 
+/* Links */
 a {
-    color: #eee;
-    text-decoration: none;
+  color: #eee;
+  text-decoration: none;
+}
+
+/* Headings and paragraphs */
+h1, p {
+  color: #333;
+  font-style: normal;
+  line-height: normal;
 }
 
 h1 {
-    color: #333;
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 p {
-    color: #333;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 /* NAVIGATION HEADER STYLING */
 .top {
-    width: 100%;
-    display: flex;
-    padding: 1.56rem;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #285867;
-    color: #eee;
-    overflow: auto;
+  width: 100%;
+  display: flex;
+  padding: 1.56rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #285867;
+  color: #eee;
+  overflow: auto;
 }
 
 .logo-main {
-    gap: 0.625rem;
-    font-size: 1.75rem;
-    align-items: center;
-    font-style: normal;
-    font-weight: 800;
-    display: flex;
-    width: 100%;
-
+  gap: 0.625rem;
+  font-size: 1.75rem;
+  align-items: center;
+  font-weight: 800;
+  display: flex;
+  width: 100%;
 }
 
 .title {
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 800;
-    width: 100%;
-    line-height: 1rem;
- }
- 
- .title a {
-    text-decoration: none;
- }
+  font-size: 2rem;
+  font-weight: 800;
+  width: 100%;
+  line-height: 1rem;
+}
 
- .logout {
+.title a {
+  text-decoration: none;
+}
+
+.logout {
   margin-right: 3rem;
- }
- 
- .logout a{
-    font-size: 1.2em;
- }
- 
+}
+
+.logout a {
+  font-size: 1.2em;
+}
 
 .main-action {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 300;
+  white-space: nowrap;
 }
 
 /* NAVBAR */
 
 .navbar {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #153544;
+  width: 100%;
+  background-color: #153544;
 }
 
 .navbar a {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 1.125rem;
-    font-weight: 300;
-    color: #eeeeee;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #eeeeee;
 }
 
 .navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-height: 49px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 49px;
 }
 
+/* Buttons */
+.primary-button, .secondary-button {
+  border-radius: 0.625rem;
+  padding: 1rem 1rem;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 
-/* PRIMARY BUTTON STYLES */
 .primary-button {
-    border-radius: 0.625rem;
-    border: 3px solid #153544;
-    background: #285867;
-    padding: 1rem 1rem;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial;
-    color: #eee;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  border: 3px solid #153544;
+  background: #285867;
+  color: #eee;
 }
 
 .primary-button:hover {
-    background-color: #153544;
-    border: 3px solid #09202B;
+  background-color: #153544;
+  border: 3px solid #09202B;
 }
 
 .primary-button:active {
-    background-color: #09202B;
-    border: 3px solid #09202B;
+  background-color: #09202B;
+  border: 3px solid #eee;
 }
 
-
-.primary-button:focus {
-    outline-color: #000;
+.secondary-button {
+  border: 3px solid #E39774;
+  background: #FAE0D6;
+  color: #E39774;
 }
 
+.secondary-button:hover {
+  background-color: #E38A6C;
+  border: 3px solid #7B2A10;
+  color: #7B2A10;
+}
+
+.secondary-button:active {
+  background-color: #3D1103;
+  border: 3px solid #3D1103;
+  color: #eee;
+}
+
+.secondary-button:focus {
+  outline-color: #000;
+}
+
+.complete {
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: 3px solid #153544;
+  background: #285867;
+  color: #eee;
+  position: absolute;
+  top: 37%;
+  right: 10px;
+}
+
+.complete:hover {
+  background-color: #153544;
+  border: 3px solid #09202B;
+}
+
+.complete:active {
+  background-color: #09202B;
+  border: 3px solid #eee;
+}
+
+/* Modal styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-box {
-    margin: 10% auto;
-    width: 600px;
-    background-color: #285867;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
-    animation-name: modalopen;
-    animation-duration: var(--modal-duration);
+  margin: 10% auto;
+  width: 600px;
+  background-color: #285867;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-btn {
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform .4s;
-    border: 3px solid #153544;
-    background: #285867;
-    padding: 1rem 1rem;
-    justify-content: center;
-    align-items: center;
-    max-width: 80px;
-    max-height: 80px;
-    min-width: 80px;
-    min-height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform .4s;
+  border: 3px solid #153544;
+  background: #285867;
+  padding: 1rem 1rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 80px;
+  min-height: 80px;
 }
 
 .modal-btn:hover {
-    background-color: #153544;
-    border: 3px solid #153544;
-    transform: rotate(90deg)
+  background-color: #153544;
+  border: 3px solid #153544;
+  transform: rotate(90deg);
 }
 
 @keyframes modalopen {
-    from {
+  from {
       opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
+  to {
+      opacity: 1;
+  }
+}
 
-form input,
-form textarea {
+/* Form styles */
+form input, form textarea {
   width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -215,148 +260,97 @@ form label {
   margin: 5px 0;
 }
 
-
-/* SECONDARY BUTTON STYLES */
-
-.secondary-button {
-    border-radius: 0.625rem;
-    border: 3px solid #E39774;
-    background: #FAE0D6;
-    padding: 1rem 1rem;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial;
-    color: #E39774;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.secondary-button:hover {
-    background-color: #E38A6C;
-    border: 3px solid #7B2A10;
-    color: #7B2A10;
-
-}
-
-.secondary-button:active {
-    background-color: #3D1103;
-    border: 3px solid #3D1103;
-    color: #eee;
-}
-
-
-.secondary-button:focus {
-    outline-color: #000;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-}
-
-
-
-
-
 /* ====== BODY MAIN ====== */
 
+/* Quotas section */
 .quotas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-.quotas .card {
-    position: relative;
-    background-color: #fff;
-    margin: 10px;
-    padding: 20px 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
+.quotas .card {
+  position: relative;
+  background-color: #fff;
+  margin: 10px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Delete button */
 .delete {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    color: red;
-    background: none;
-    border: none;
-  }
-  
-  .delete:hover {
-    color: #000;
-  }
-  
-  .date {
-    color: #999;
-    font-size: 14px;
-  }
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+  background: none;
+  border: none;
+}
 
+.delete:hover {
+  color: #000;
+}
+
+/* Tag styles */
 .tag {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 5px;
-    font-size: 14px;
-  }
-  
-  .tag-home {
-    background: steelblue;
-  }
-  
-  .tag-school {
-    background: coral;
-  }
-  
-  .tag-fitness {
-    background: green;
-  }
-  
-  .tag-fun {
-    background: purple;
-  }
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 14px;
+}
 
+.tag-home {
+  background: steelblue;
+}
+
+.tag-school {
+  background: coral;
+}
+
+.tag-fitness {
+  background: green;
+}
+
+.tag-fun {
+  background: purple;
+}
 
 /* ====== FOOTER CSS ====== */
 
+/* Footer styles */
 #footer {
-    position: relative;
-    margin: auto 0;
-    width: 100%;
+  position: relative;
+  margin: auto 0;
+  width: 100%;
 }
 
 .footerContainer {
-    color: #333333;
-    display: flex;
-    padding: 1.1rem;
-    align-items: center;
-    background-color: #DEDEDE;
-    border-top: 1px solid #CCCCCC;
+  color: #333333;
+  display: flex;
+  padding: 1.1rem;
+  align-items: center;
+  background-color: #DEDEDE;
+  border-top: 1px solid #CCCCCC;
 }
 
 .logoFooter {
-    color: #333333;
-    padding-right: 15px;
+  color: #333333;
+  padding-right: 15px;
 }
 
 .footerText {
-    font-size: .75rem;
-    color: #333;
-    text-align: right;
-    white-space: nowrap;
-
+  font-size: .75rem;
+  color: #333;
+  text-align: right;
+  white-space: nowrap;
 }
