@@ -14,13 +14,9 @@ const QuotaSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toISOString().slice(0, 10),
   },
-  // level: {
-  //   type: String,
-  //   required: [true, "Please select one of the options"],
-  // },
 });
 
 const Quota = mongoose.model("Quota", QuotaSchema);

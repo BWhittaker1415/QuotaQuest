@@ -30,6 +30,7 @@ router.post("/", async (req, res) => {
     title: req.body.title,
     description: req.body.description,
     tag: req.body.tag,
+    date: new Date().toISOString().slice(0, 10),
   });
 
   try {
@@ -52,7 +53,6 @@ router.put("/:id", async (req, res) => {
           description: req.body.description,
           tag: req.body.tag,
           date: new Date().toISOString().slice(0, 10),
-          // level: req.body.level,
         },
       },
       { new: true }
