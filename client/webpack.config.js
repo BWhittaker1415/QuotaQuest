@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../public"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   devServer: {
     static: {
@@ -28,16 +29,16 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
-      // {
-      //   test: /\.svg$/,
-      //   type: "asset/resource",
-      //   generator: {
-      //     dataUrl: {
-      //       // Use data URLs for SVG files
-      //       encoding: "base64",
-      //     },
-      //   },
-      // },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "images/",
+          },
+        },
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -58,4 +59,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  performance: {
+    hints: false,
+    maxAssetSize: 1000000,
+  },
 };
