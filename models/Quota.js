@@ -17,6 +17,10 @@ const QuotaSchema = new mongoose.Schema({
     type: String,
     default: new Date().toISOString().slice(0, 10),
   },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Quota = mongoose.model("Quota", QuotaSchema);

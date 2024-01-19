@@ -8,7 +8,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Ben Whittaker",
+  "author": "Benjamin Whittaker",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",

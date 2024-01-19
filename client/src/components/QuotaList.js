@@ -48,12 +48,11 @@ class QuotaList {
 
   async updateQuota(quotaId) {
     try {
-      // Update the task as completed on the server (you'll need an API endpoint for this)
-      const res = await QuotaApi.updateQuota(quotaId);
-
+      const res = await QuotaApi.updateQuota(quotaId, { completed: true }); // Update the 'completed' field
       if (res.success) {
         // Update the progress bar here (calculate progress and update UI)
         this.updateProgressBar();
+        this.render(); // Re-render the list to reflect the completion status
       } else {
         alert(`Error: ${res.error}`);
       }
@@ -100,8 +99,9 @@ class QuotaList {
     this.quotaListEl.innerHTML = this.quotas
       .map((quota) => {
         const tagClass = this.getTagClass(quota.tag);
+        const completedClass = quota.completed ? "completed" : "";
         return `
-         <div class="card" data-id="${quota._id}">
+         <div class="card ${completedClass}" data-id="${quota._id}">
          <button class="delete"><i class="fas fa-times"></i></button>
          <button class="complete">Done!</button>
          <h3>
