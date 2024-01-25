@@ -48,17 +48,18 @@ class QuotaList {
 
   async updateQuota(quotaId) {
     try {
-      const res = await QuotaApi.updateQuota(quotaId, { completed: true }); // Update the 'completed' field
-      if (res.success) {
-        // Update the progress bar here (calculate progress and update UI)
-        this.updateProgressBar();
-        this.render(); // Re-render the list to reflect the completion status
+      const response = await QuotaApi.updateQuota(quotaId);
+
+      if (response.data.success) {
+        const updatedQuota = response.data.data;
+        this.updateCardUI(quotaId, updatedQuota.completed);
       } else {
-        alert(`Error: ${res.error}`);
+        console.error(`Error updating quota: ${response.data.error}`);
+        alert(`Error updating quota: ${response.data.error}`);
       }
     } catch (error) {
-      console.error("Error completing quota:", error);
-      alert("Error completing quota. Please try again.");
+      console.error("Error updating quota:", error);
+      alert("Error updating quota. Please try again.");
     }
   }
 
