@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -16,54 +17,24 @@
   </head>
 
   <body>
-    <div class="top">
-      <div class="logo-main title">
-        <img src="../images/books.vertical.circle.fill.svg" /> QuotaQuest
-      </div>
-      <a href="#" class="logout">Logout</a>
-    </div>
-    <nav class="navbar">
-      <div class="container">
-        <div class="navLeft">
-          <a href="#">Manage Goals</a>
-        </div>
-
-        <button type="button" id="modal-btn" class="modal-btn">
-          <img src="../images/Plus.svg" alt="Add" />
-        </button>
-
-        <div class="navRight">
-          <a href="#">Streaks</a>
-        </div>
-      </div>
-    </nav>
-    <header class="header">
-      <div class="container">
-        <div>
-          <h1>Daily Quotas</h1>
-        </div>
-      </div>
-    </header>
-
     <div class="container">
-      <div id="quota-list" class="quotas"></div>
-    </div>
-
-    <div id="modal" class="modal">
-      <div id="form-modal" class="modal-box"></div>
-    </div>
-
-    <footer id="footer">
-      <div class="footerContainer">
-        <img
-          class="logoFooter"
-          src="../images/books.vertical.circle.fill_dark.svg"
-          alt="footer image"
-        />
-        <div class="title">
-          <p class="title">QuotaQuest</p>
-        </div>
-
+      <form id="form" action="/">
+          <h1>Login</h1>
+          <div class="input-control">
+              <label for="username">Username</label>
+              <input id="username" name="username" type="text">
+              <div class="error"></div>
+          </div>
+          
+          <div class="input-control">
+              <label for="password">Password</label>
+              <input id="password"name="password" type="password">
+              <div class="error"></div>
+          </div>
+          
+          <button type="submit">Login</button>
+      </form>
+  </div>
         <div>
           <p class="footerText">
             <span
