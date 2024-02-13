@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 
 // Register user
-router.post("/register", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const user = new User(req.body);
     await user.save();
